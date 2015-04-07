@@ -1,0 +1,4 @@
+# Gitignore file.
+
+# Ignore outout .txt files
+*.txt
