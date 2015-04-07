@@ -41,7 +41,7 @@ int main() {
 
     U = a * arma::exp(-den * arma::pow(x, 2));
 
-    U.save("U0.txt", arma::raw_ascii);
+    U.save("output/U0.txt", arma::raw_ascii);
 
     /* Populate the matrices */
 
@@ -63,12 +63,12 @@ int main() {
 
     for (i = 0; i < duration; i++) {
         U = A * U;
-        if ((i == 1) || (i == 5) || (i == 10)) {
-            ss << "U" << i << ".txt";
+        if ((i == 1) || (i == 2) || (i == 3)) {
+            ss << "output/U" << i << ".txt";
             U.save(ss.str(), arma::raw_ascii);
             ss.str(std::string());                  // Clear stringstream
         }
-    } // End for
+    }
 
     return 0;
 }

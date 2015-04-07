@@ -1,4 +1,6 @@
 # Gitignore file.
 
-# Ignore outout .txt files
+# Ignore output files
 *.txt
+main
+Makefile
