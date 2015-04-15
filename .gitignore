@@ -1,6 +1,5 @@
-# Gitignore file.
-
-# Ignore output files
 *.txt
+*.swp
+*.pdf
 main
 Makefile
