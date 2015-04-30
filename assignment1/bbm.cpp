@@ -4,21 +4,23 @@
 #include <limits>
 #include <fstream>
 #include <ctime>
-//#include "armadillo"
 using namespace std;
-//using namespace arma;
+
+/* Program constants */
+const double epsilon = numeric_limits<double>::min();
+const double twoPi = 2.0 * 3.14159265358979323846;
 
 /* Physical constants */
 const double eta = 1e-3;
 const double kbT = 26e-3;
-const double dU = 80;
+const double dU = 1 * kbT;
 const double alpha = 0.2;
 const double L = 20e-6;
 //const double dx = 1e-9;
 const double dt = 1e-3;
 const double D = kbT / dU;
 const int T = 500;
-double gamma;
+//double gamma;
 
 /* Physical variables */
 double x;
@@ -103,11 +105,8 @@ double force(const double x, const double t) {
 
 // Uses cstdlib, cmath, limits
 double gaussianRNG(double mu, double sigma) {
-    const double epsilon = numeric_limits<double>::min();
-    const double twoPi = 2.0 * 3.14159265358979323846;
-
     double z0, z1, u1, u2;
-    
+
     do {
         u1 = rand() * (1.0/RAND_MAX);
         u2 = rand() * (1.0/RAND_MAX);
